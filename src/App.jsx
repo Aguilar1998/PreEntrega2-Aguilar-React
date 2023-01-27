@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import NavBar from './container/ComponentsNavBar/NavBar'
 import ExampleSection from './container/ComponentsExampleSection/Section'
 import ItemListContainer from './container/ItemsListContainer/ItemListContainer'
+import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer'
 
 // ---------------Context nuevo-------------//
 
@@ -21,6 +22,7 @@ const App = () => {
             
             <Routes>
                 <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/item/:id' element={<ItemDetailContainer/>}/>
                 <Route path='*' element={<Navigate to='/' />} />
             </Routes>
 
