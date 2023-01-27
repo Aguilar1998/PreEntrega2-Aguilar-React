@@ -1,23 +1,23 @@
 
 
 
-import img1 from '../../assets/img/FrontEnd/bootstrap-stack.png';
-import img3 from '../../assets/img/FrontEnd/CodigoHTML.png';
-import img2 from '../../assets/img/FrontEnd/JavaScript.png';
-import img4 from '../../assets/img/FrontEnd/React-icon.svg.png';
-import img5 from '../../assets/img/FrontEnd/Tailwind.png';
-import img6 from '../../assets/img/FrontEnd/TypeScript.webp';
-import img7 from '../../assets/img/AWS/AmazonRDS.png'
-import img8 from '../../assets/img/AWS/AWS_ElastiCache_Icon-1.png'
-import img9 from '../../assets/img/AWS/AmazonRoute53.png'
-import img10 from '../../assets/img/AWS/DynamoDB.png'
-import img11 from '../../assets/img/AWS/AmazonSQS.png'
-import img12 from '../../assets/img/AWS/AmazonEMR.png'
-import img13 from '../../assets/img/Sketch/Balsamiq.webp'
-import img14 from '../../assets/img/Sketch/Figma.png'
+import img1 from '../assets/img/FrontEnd/bootstrap-stack.png';
+import img3 from '../assets/img/FrontEnd/CodigoHTML.png';
+import img2 from '../assets/img/FrontEnd/JavaScript.png';
+import img4 from '../assets/img/FrontEnd/React-icon.svg.png';
+import img5 from '../assets/img/FrontEnd/Tailwind.png';
+import img6 from '../assets/img/FrontEnd/TypeScript.webp';
+import img7 from '../assets/img/AWS/AmazonRDS.png'
+import img8 from '../assets/img/AWS/AWS_ElastiCache_Icon-1.png'
+import img9 from '../assets/img/AWS/AmazonRoute53.png'
+import img10 from'../assets/img/AWS/DynamoDB.png'
+import img11 from'../assets/img/AWS/AmazonSQS.png'
+import img12 from'../assets/img/AWS/AmazonEMR.png'
+import img13 from'../assets/img/Sketch/Balsamiq.webp'
+import img14 from'../assets/img/Sketch/Figma.png'
 
 
-const productos = [
+export const productos = [
     { id: 1,  categoria: "FrontEnd", image: img1,  title: "hobie",     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', hashtag1: "Tenis",          hashtag2: "Musica",    hashtag3: "Entrenamiento"},
     { id: 2,  categoria:"FrontEnd",  image: img2,  title: "FrontEnd",  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', hashtag1: "Almacenamiento", hashtag2: "Velocidad", hashtag3: "Orden"},
     { id: 3,  categoria: "FrontEnd", image: img3,  title: "Front-end", text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', hashtag1: "JavaScript",     hashtag2: "React.js",  hashtag3: "Node.js"},
