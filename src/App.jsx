@@ -1,11 +1,11 @@
 import React, { createContext } from 'react'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
-import NavBar from './components/ComponentsNavBar/NavBar'
-import { ComponentHome } from './components/ComponentHome/ComponentHome'
-import CardsSketch from './components/ComponentsCard/CardSketch'
-import CardsFrontEnd from './components/ComponentsCard/CardFrontEnd'
-import ExampleSection from './components/ComponentsExampleSection/Section'
+import NavBar from './container/ComponentsNavBar/NavBar'
+import { ComponentHome } from './container/ComponentHome/ComponentHome'
+import CardsSketch from './container/cardContainer/CardSketch'
+import CardsFrontEnd from './container/cardContainer/CardFrontEnd'
+import ExampleSection from './container/ComponentsExampleSection/Section'
 
 // ---------------Context nuevo-------------//
 
@@ -18,16 +18,6 @@ const App = () => {
     console.log(AppContext);
     return (
         <BrowserRouter className='container mx-auto'>
-            {
-                
-            /* <AppContenxt.Provider value={{
-                products,
-                saludo
-            }}>
-                <CardFrontEnd/>
-            </AppContenxt.Provider> */
-                
-            }
             
             <NavBar />
             <ExampleSection />
