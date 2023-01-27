@@ -1,19 +1,19 @@
 import React from 'react'
 
 
-const Item = ({ productos }) => {
+const Item = ({ producto }) => {
   
     return (
-        <div className='my-3 shadow-xl' id={productos.id} >
-          <img src={productos.image} alt={productos.title} className='w-full h-52' />
+        <div className='my-3 shadow-xl' id={producto.id} >
+          <img src={producto.image} alt={producto.title} className='w-full h-52' />
           <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{productos.title}</div>
-              <p className="text-gray-700 text-base">{productos.text}</p>
+              <div className="font-bold text-xl mb-2">{producto.title}</div>
+              <p className="text-gray-700 text-base">{producto.text}</p>
           </div>
           <div className="px-6 py-4">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{productos.hashtag1}</span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{productos.hashtag2}</span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#{productos.hashtag3}</span>
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{producto.hashtag1}</span>
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{producto.hashtag2}</span>
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#{producto.hashtag3}</span>
           </div>
           <div className="inline-flex rounded-md shadow m-4 b">
             <a

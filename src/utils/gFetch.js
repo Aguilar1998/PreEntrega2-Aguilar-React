@@ -17,7 +17,7 @@ import img13 from'../assets/img/Sketch/Balsamiq.webp'
 import img14 from'../assets/img/Sketch/Figma.png'
 
 
-export const productos = [
+export const producto = [
     { id: 1,  categoria: "FrontEnd", image: img1,  title: "hobie",     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', hashtag1: "Tenis",          hashtag2: "Musica",    hashtag3: "Entrenamiento"},
     { id: 2,  categoria:"FrontEnd",  image: img2,  title: "FrontEnd",  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', hashtag1: "Almacenamiento", hashtag2: "Velocidad", hashtag3: "Orden"},
     { id: 3,  categoria: "FrontEnd", image: img3,  title: "Front-end", text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', hashtag1: "JavaScript",     hashtag2: "React.js",  hashtag3: "Node.js"},
@@ -36,11 +36,13 @@ export const productos = [
 
 
 
-
 export const gFetch = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(productos)
+            resolve(producto)
         }, 1000)
     })
 }
+
+
+

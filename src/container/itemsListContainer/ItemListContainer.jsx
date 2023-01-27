@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { gFetch } from '../../utils/gFetch'
+import { gFetch } from "../../utils/gFetch";
 import ItemList from './ItemList'
 
 

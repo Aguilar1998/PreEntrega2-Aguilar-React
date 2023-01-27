@@ -14,7 +14,7 @@ export default function ItemList({items}) {
               <div className="sm:w-1/2 lg:w-1/3 px-2 my-2">
                 <Item
                     key={producto.id}
-                  producto={producto}
+                    producto={producto}
                 />
               </div>
             ))
