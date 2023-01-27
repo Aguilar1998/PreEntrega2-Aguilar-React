@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Card = ({ productos }) => {
+const Item = ({ productos }) => {
   
     return (
         <div className='my-3 shadow-xl' id={productos.id} >
@@ -27,4 +27,7 @@ const Card = ({ productos }) => {
     )
 }
 
-export default Card
+export default Item
+
+
+

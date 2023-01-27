@@ -1,11 +1,8 @@
 import React, { createContext } from 'react'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
-
 import NavBar from './container/ComponentsNavBar/NavBar'
-import { ComponentHome } from './container/ComponentHome/ComponentHome'
-import CardsSketch from './container/cardContainer/CardSketch'
-import CardsFrontEnd from './container/cardContainer/CardFrontEnd'
 import ExampleSection from './container/ComponentsExampleSection/Section'
+import ItemListContainer from './container/ItemsListContainer/ItemListContainer'
 
 // ---------------Context nuevo-------------//
 
@@ -23,12 +20,7 @@ const App = () => {
             <ExampleSection />
             
             <Routes>
-                
-                <Route path='/' element={<ComponentHome />} />
-                
-                <Route path='/sketch' element={<CardsSketch/>}/>
-                <Route path='/FrontEnd' element={<CardsFrontEnd/>}/>
-                
+                <Route path='/' element={<ItemListContainer/>} />
                 <Route path='*' element={<Navigate to='/' />} />
             </Routes>
 
