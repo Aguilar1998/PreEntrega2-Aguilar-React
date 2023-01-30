@@ -1,12 +1,12 @@
 
 export const ItemDetail = ({producto}) => {
   return (
-    <div>
+    <center className="">
           <div>
-              <h2>{producto.name}</h2>
-              <h4>{producto.categoria}</h4>
+              <h2>{producto.title}asdf</h2>
+              <h4>{producto.categoria}asdf</h4>
           </div>
-          <p>producto.text</p>
-    </div>
+          <p>{producto.text}asdfasdf</p>
+    </center>
   )
 }

@@ -19,13 +19,9 @@ const Item = ({ producto }) => {
           <div className="inline-flex rounded-md shadow m-4 b">
           
             {/* Enlace para ir al detalle del producto. */}
-            <Link to={`/detail/${producto.id}`}>
-              <a
-                href=" "
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300"
-              >
+            <Link to={`/item/${producto.id}`} className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300"
+            >
                 Mas informacion
-              </a>
             </Link>
           </div>
         </div>
