@@ -36,10 +36,10 @@ export const producto = [
 
 
 
-export const gFetch = () => {
+export const gFetch = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(producto)
+            resolve(id ? producto.find(prod => prod.id === id ): producto)
         }, 1000)
     })
 }

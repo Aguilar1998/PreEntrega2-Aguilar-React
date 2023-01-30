@@ -4,13 +4,16 @@ import NavBar from './container/ComponentsNavBar/NavBar'
 import ExampleSection from './container/ComponentsExampleSection/Section'
 import ItemListContainer from './container/ItemsListContainer/ItemListContainer'
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer'
+import { ItemListAws } from './container/ItemsListContainer/ItemListAws'
+import { ItemListFrontEnd } from './container/ItemsListContainer/ItemListFrontEnd'
+import { ItemListSketch } from './container/ItemsListContainer/ItemListSketch'
 
 // ---------------Context nuevo-------------//
 
 const AppContext = createContext([])
 
 // ---------------Context nuevo-------------//
-// raft 
+
 
 const App = () => {
     console.log(AppContext);
@@ -22,8 +25,11 @@ const App = () => {
             
             <Routes>
                 <Route path='/' element={<ItemListContainer/>} />
-                <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+                <Route path='/item/:id' element={<ItemDetailContainer/>} />
                 <Route path='*' element={<Navigate to='/' />} />
+                <Route path='/ItemListAws' element={<ItemListAws/>} ></Route>
+                <Route path='/ItemListSketch' element={<ItemListSketch/> }></Route>
+                <Route path='/ItemListFrontEnd' element={<ItemListFrontEnd/> }></Route>
             </Routes>
 
 
