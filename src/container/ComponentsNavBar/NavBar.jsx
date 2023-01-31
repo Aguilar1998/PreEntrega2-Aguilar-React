@@ -1,8 +1,13 @@
 import React from 'react'
 import ItemsNavBar from './ItemsNavBar'
 
+
+// Components Navbar, this is tailwind.
+// https://bluuweb.github.io/tailwindcss/05-components/#navigation-navbar
 const NavBar = () => {
+
     return (
+
         <nav className="flex  bg-yellow-200 p-6 flex-col">
             <div className='flex items-center justify-between flex-wrap  bg-yellow-200  p-6'>
                 <div className="flex items-center flex-shrink-0 text-blue-500 mr-6">
@@ -25,9 +30,12 @@ const NavBar = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Segundo componente ItemsNavBar con enlaces de diferentes productos/servicios.*/}
             <div className='flex justify-center flex-col items-center '>
                 <ItemsNavBar/>
             </div>
+            
         </nav>
     )
 }
