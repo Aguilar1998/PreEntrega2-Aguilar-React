@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Impresion de la Card 
-const Item = ({ producto }) => {
+const Item = ({producto}) => {
   
     return (
         <div className='my-3 shadow-xl' id={producto.id} >

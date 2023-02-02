@@ -1,15 +1,12 @@
 
-export const ItemDetail = ({ producto }) => {
+export const ItemDetail = ( {producto} ) => {
 
   return (
-    <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14'>
+    <div className='flex flex-row justify-center w-3/4 m-auto mt-32 mb-32 border-gray-200 rounded-lg border-2 p-14'>
       <img src={producto.image} alt="" className='w-2/5 padding-5 shadow-2xl rounded-xl	h-1/2	 p-0.5 ' />
       <div className="px-6 py-4 flex flex-col justify-around">
         <div className="font-light text-xl mb-2">{producto.categoria}</div>
         <div className="font-bold text-2xl mb-2">{producto.title}</div>
-        <p className="text-gray-700 text-base">
-          {producto.text}
-        </p>
         <p className="text-gray-700 text-base">
           {producto.description}
         </p>
