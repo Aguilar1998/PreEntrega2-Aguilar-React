@@ -5,9 +5,6 @@ import ExampleSection from './container/ComponentsExampleSection/Section'
 
 import ItemListContainer from './container/ItemsListContainer/ItemListContainer'
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer'
-import { ItemListAws } from './container/ItemsListContainer/ItemListAws'
-import { ItemListFrontEnd } from './container/ItemsListContainer/ItemListFrontEnd'
-import { ItemListSketch } from './container/ItemsListContainer/ItemListSketch'
 
 // ---------------Context nuevo-------------//
 
@@ -26,11 +23,9 @@ const App = () => {
             
             <Routes>
                 <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/category/:id' element={<ItemListContainer/>} />
                 <Route path='/Item/:id' element={<ItemDetailContainer/>} />
                 <Route path='*' element={<Navigate to='/' />} />
-                <Route path='/ItemListAws' element={<ItemListAws/>} ></Route>
-                <Route path='/ItemListSketch' element={<ItemListSketch/> }></Route>
-                <Route path='/ItemListFrontEnd' element={<ItemListFrontEnd/> }></Route>
             </Routes>
 
 
