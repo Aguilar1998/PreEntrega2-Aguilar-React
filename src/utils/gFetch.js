@@ -1,6 +1,3 @@
-
-
-
 import img1 from '../assets/img/FrontEnd/bootstrap-stack.png';
 import img3 from '../assets/img/FrontEnd/CodigoHTML.png';
 import img2 from '../assets/img/FrontEnd/JavaScript.png';
@@ -43,6 +40,3 @@ export const gFetch = (id) => {
         }, 1000)
     })
 }
-
-
-
