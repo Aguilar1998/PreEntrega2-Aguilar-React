@@ -1,16 +1,16 @@
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { gFetch } from '../../utils/gFetch'
+import { gFetchFrontEnd } from '../../utils/gFetchFrontEnd'
 import { ItemDetail } from './ItemDetail'
 
-const ItemDetailContainer = () => {
+const ItemDetailFrontEnd = () => {
   const[producto, setProducto]= useState({})
   const { id } = useParams()
   console.log(id);
 
   useEffect(() => {
-    gFetch(id)
+    gFetchFrontEnd(id)
       .then( resp => setProducto(resp))
   }, [id])
 
@@ -21,4 +21,4 @@ const ItemDetailContainer = () => {
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailFrontEnd
