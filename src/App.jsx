@@ -19,7 +19,7 @@ const App = () => {
     return (
         <BrowserRouter className='container mx-auto'>
             
-            <NavBar />
+            <NavBar/>
             <ExampleSection />
             
             <Routes>
