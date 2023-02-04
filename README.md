@@ -72,3 +72,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+1-Codigo comentado que no este
+2-no se mezcla idiomas en el codigo
+3-no repetir, no codigo comentado
+4-Importaciones creadas no usadas 
+5-Variables que no se utilicen eliminarlo
+6-Variables y funciones con nombres explicativos
+7-Codigo bien identado
+8-Diseño modular, un componente debe hacer solo una sola cosa
+9-Sacar los console.log, que queden solo los errores
+10-Validaciones

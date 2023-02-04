@@ -8,24 +8,6 @@ export default function ExampleSection() {
           <span className="block">Ready to dive in?</span>
           <span className="block text-orange-300	">Start your free study today.</span>
         </h2>
-        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-          <div className="inline-flex rounded-md shadow">
-            <a
-              href="./index.html"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-black-800	 hover:bg-gray-50"
-            >
-              Get started
-            </a>
-          </div>
-          <div className="ml-3 inline-flex rounded-md shadow">
-            <a
-              href="./index.html"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-black-800 hover:bg-gray-50"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   )

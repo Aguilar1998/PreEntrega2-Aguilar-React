@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ItemsNavBar from './ItemsNavBar'
 
 
@@ -24,9 +25,9 @@ const NavBar = () => {
 
                     </div>
                     <div>
-                        <a href="./index" className="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-500 hover:text-white border-gray-400 hover:border-transparent  hover:bg-blue-500 mt-4 lg:mt-0">
-                            Download
-                        </a>
+                        <Link to='/CartContainer' className="inline-block text-sm px-4 py-2 leading-none border-2 rounde border-gray-4600 hover:border-black  mt-4 lg:mt-0">
+                            🛒
+                        </Link>
                     </div>
                 </div>
             </div>
