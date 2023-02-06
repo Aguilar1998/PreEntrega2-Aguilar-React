@@ -1,14 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount"
+import { useCartContext } from "../ComponentsCart/CartContainer";
+import ItemCount from "../ItemCount/ItemCount";
 
+
+
+// Component ItemDetail para mostrar al ingresar a detalle desde la card.
+// Se ingresa producto del componente ItemDetailContainer el cual utiliza un useState() para recorrer el
 export const ItemDetail = ({ producto }) => {
-  const onAdd = (cant) => {
-    console.log(cant);
-  }
+  const [goToCart, setGoToCart] = useState(false)
+  const { addProduct } = useCartContext();
 
-  // if (loading) {
-  //   <RingLoader color="#fddd35" />
-  // }
+  const onAdd = (quantity) => {
+    setGoToCart(true)
+    addProduct(producto, quantity)
+  }
 
   return (
     <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14'>
@@ -16,7 +22,9 @@ export const ItemDetail = ({ producto }) => {
       <div className="ml-12 flex flex-col">
         <div className="font-light text-xl mb-2">{producto.categoria}</div>
         <div className="w-1/2 ">
-          <ItemCount onAdd={onAdd} />
+          {
+            goToCart ? <Link to="/CartContainer" >Terminar compra</Link> : <ItemCount onAdd={onAdd} />
+          }
         </div>
         <div className="px-6 py-4 flex flex-col justify-around">
           <div className="font-bold text-2xl mb-2">{producto.title}</div>
@@ -34,12 +42,14 @@ export const ItemDetail = ({ producto }) => {
         </div>
 
         <div className="w-1/2 flex justify-evenly pt-3 border-t-2 border-gray-300 ">
-          <Link to={'/cart'}>
+
+          <Link to={'/CartContainer'}>
             <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Ir al carrito</button>
           </Link>
           <Link to={'/'}>
-            <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Seguir comprando</button>
+            <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Mas servicios</button>
           </Link>
+
 
         </div>
 
