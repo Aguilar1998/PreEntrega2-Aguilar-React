@@ -15,7 +15,7 @@ export const ItemDetail = ({ producto }) => {
   }
 
   return (
-    <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14 rotate-scale-up-diag-1'>
+    <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14   bg-yellow-50 rotate-scale-up-diag-1'>
       <img src={producto.image} alt="" className='w-2/5 padding-5 shadow-2xl rounded-xl	h-1/2	 p-0.5 ' />
       <div className="ml-12 flex flex-col">
         <div className="font-light text-xl mb-2">{producto.categoria}</div>

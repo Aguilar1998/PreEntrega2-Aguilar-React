@@ -1,32 +1,32 @@
 
-import React, { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { gFetch } from "../utils/gFetch"
-const CartContext = React.createContext([])
+// import React, { useContext, useEffect, useState } from "react"
+// import { useParams } from "react-router-dom"
+// import { gFetch } from "../utils/gFetch"
+// const CartContext = React.createContext([])
 
-export const useCartContext = () => useContext(CartContext)
+// export const useCartContext = () => useContext(CartContext)
 
-export const CartProvider = ({ Children }) => {
-  const [product, setProducto] = useState({})
-  const [loading, setLoading] = useState(true)
+// export const CartProvider = ({ Children }) => {
+//   const [product, setProducto] = useState({})
+//   const [loading, setLoading] = useState(true)
 
 
-  const { id } = useParams()
+//   const { id } = useParams()
 
-  useEffect(() => {
-    gFetch(id)
-      .then(resp => setProducto(resp))
-      .then(resp => setLoading(false))
-  }, [id])
+//   useEffect(() => {
+//     gFetch(id)
+//       .then(resp => setProducto(resp))
+//       .then(resp => setLoading(false))
+//   }, [id])
 
  
 
-  return (
-    <CartContext.Provider value={{
-      product,
-      loading
-    }}>
-      {Children}
-    </CartContext.Provider>
-  )
-}
+//   return (
+//     <CartContext.Provider value={{
+//       product,
+//       loading
+//     }}>
+//       {Children}
+//     </CartContext.Provider>
+//   )
+// }
