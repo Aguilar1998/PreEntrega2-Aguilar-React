@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 const Item = ({producto}) => {
   
     return (
-        <div className='my-3 shadow-xl bounce-top' id={producto.id} >
+        <div className='m-auto w-64 shadow-xl bounce-top' id={producto.id} >
           <img src={producto.image} alt={producto.title} className='w-full h-52' />
           <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{producto.title}</div>
-              <p className="text-gray-700 text-base">{producto.text}</p>
+              {/* <p className="text-gray-700 text-base">{producto.text}</p> */}
           </div>
           <div className="px-6 py-4">
               <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{producto.hashtag1}</span>

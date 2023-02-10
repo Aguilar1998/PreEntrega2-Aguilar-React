@@ -15,7 +15,7 @@ import img14 from'../assets/img/Sketch/Figma.png'
 
 
 export const producto = [
-    { id: 1,  categoria: "FrontEnd", image: img1,  title: "Bootstrap",        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', description:'Mi descripcion', hashtag1: "Tenis",          hashtag2: "Musica",    hashtag3: "Entrenamiento"},
+    { id: 1,  categoria: "FrontEnd", image: img1,  title: "Bootstrap",        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', description:'Mi descripcion', hashtag1: "Libreria",       hashtag2: "Framework", hashtag3: "CSS"},
     { id: 2,  categoria: "FrontEnd",  image: img2, title: "JavaScript",       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', description:'Mi descripcion', hashtag1: "Almacenamiento", hashtag2: "Velocidad", hashtag3: "Orden"},
     { id: 3,  categoria: "FrontEnd", image: img3,  title: "HTML",             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', description:'Mi descripcion', hashtag1: "JavaScript",     hashtag2: "React.js",  hashtag3: "Node.js"},
     { id: 4,  categoria: "FrontEnd", image: img4,  title: "React.js",         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.', description:'Mi descripcion', hashtag1: "Tenis",          hashtag2: "Musica",    hashtag3: "Entrenamiento"},

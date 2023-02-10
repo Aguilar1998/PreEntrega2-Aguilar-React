@@ -4,16 +4,35 @@ import { RingLoader } from 'react-spinners'
 import { gFetch } from '../../utils/gFetch'
 import { ItemDetail } from './ItemDetail'
 
+// --------------- Contenedor para detalle ------------- // 
+
 const ItemDetailContainer = () => {
+
   const [producto, setProducto] = useState({})
-  const [ loading, setLoading ]= useState(true)
+  const [loading, setLoading] = useState(true)
 
   const { id } = useParams()
 
+  // --------------- useEfeect ------------- // 
+
+  /* ----------------------------------------------
+  /* Generar efecto de desmontaje // 
+  * Luego del primer renderizado se produce un segundo rendering para cambiar de estado,
+  * A veces se produce sin intencion y causan bugs o perdida no intencionada de estados
+  * ---------------------------------------------- 
+  */
+
+  /**
+   * ----------------------------------------
+   * Condicional para modificar el estado
+   * ----------------------------------------
+   */
+
   useEffect(() => {
     gFetch(id)
-    .then(resp => setProducto(resp))
-    .finally(() => setLoading(false))
+      // --------------- UpDate ------------- // 
+      .then(resp => setProducto(resp))
+      .finally(() => setLoading(false))
   }, [id])
 
 
@@ -25,7 +44,7 @@ const ItemDetailContainer = () => {
           <RingLoader className='m-auto' color="#e5f15f" size={100} />
         </div>
         :
-        < ItemDetail producto = { producto } />
+        < ItemDetail producto={producto} />
       }
     </div>
   )

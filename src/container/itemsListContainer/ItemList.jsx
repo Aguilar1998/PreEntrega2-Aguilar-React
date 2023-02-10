@@ -8,10 +8,10 @@ import Item from './Item'
 export default function ItemList({items}) {
   return (
     <div className='w-8/12 m-auto'>
-      <div className="my-5 flex m-auto flex-wrap -mx-2">
+      <div className=" flex mt-12 flex-wrap ">
           {
             items.map(producto => (
-              <div className="sm:w-1/2 lg:w-1/3 px-2 my-2">
+              <div className="sm:w-1/2 lg:w-1/4  my-2">
                 <Item
                     key={producto.id}
                     producto={producto}

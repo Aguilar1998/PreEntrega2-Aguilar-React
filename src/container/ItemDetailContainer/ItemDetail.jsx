@@ -8,7 +8,6 @@ export const ItemDetail = ({ producto }) => {
   const [goToCart, setGoToCart] = useState()
 
 
-
   const onAdd = (cant) => {
     console.log(cant);
     setGoToCart(cant)
