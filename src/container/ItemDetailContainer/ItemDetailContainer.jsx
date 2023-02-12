@@ -1,17 +1,31 @@
-import { useEffect, useState } from 'react'
+// Import React
+import { useEffect, useState, useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import { RingLoader } from 'react-spinners'
+// Import Components
+import { CartContext } from '../../Context/CartContext'
 import { gFetch } from '../../utils/gFetch'
 import { ItemDetail } from './ItemDetail'
+import ItemCount from '../ItemCount/ItemCount'
+
 
 // --------------- Contenedor para detalle ------------- // 
-
 const ItemDetailContainer = () => {
 
-  const [producto, setProducto] = useState({})
+  // Estado
+  const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
 
   const { id } = useParams()
+  const { addItem } = useContext(CartContext)
+
+  // Function Add to Cart
+  function handleAddtoCart(count) {
+    alert(`Agregaste ${count} de ${product.title} al carrito`)
+    product.count = count;
+    addItem(product)
+  }
+
 
   // --------------- useEfeect ------------- // 
 
@@ -31,7 +45,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     gFetch(id)
       // --------------- UpDate ------------- // 
-      .then(resp => setProducto(resp))
+      .then(resp => setProduct(resp))
       .finally(() => setLoading(false))
   }, [id])
 
@@ -44,7 +58,10 @@ const ItemDetailContainer = () => {
           <RingLoader className='m-auto' color="#e5f15f" size={100} />
         </div>
         :
-        < ItemDetail producto={producto} />
+        <div>
+          <ItemCount handleAddtoCart={handleAddtoCart} />
+          <ItemDetail product={product} />
+        </div>
       }
     </div>
   )

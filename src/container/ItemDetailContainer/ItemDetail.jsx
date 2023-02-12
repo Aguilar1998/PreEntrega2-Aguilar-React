@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import '../../assets/index.css'
 
 
-export const ItemDetail = ({ producto }) => {
+export const ItemDetail = ({ product }) => {
   const [goToCart, setGoToCart] = useState()
 
 
@@ -14,10 +14,10 @@ export const ItemDetail = ({ producto }) => {
   }
 
   return (
-    <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14   bg-yellow-50 rotate-scale-up-diag-1'>
-      <img src={producto.image} alt="" className='w-2/5 padding-5 shadow-2xl rounded-xl	h-1/2	 p-0.5 ' />
+    <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14   bg-yellow-50 '>
+      <img src={product.image} alt="" className='w-2/5 padding-5 shadow-2xl rounded-xl	h-1/2	 p-0.5 ' />
       <div className="ml-12 flex flex-col">
-        <div className="font-light text-xl mb-2">{producto.categoria}</div>
+        <div className="font-light text-xl mb-2">{product.categoria}</div>
         <div className="w-1/2 ">
           {
             goToCart ?
@@ -34,17 +34,17 @@ export const ItemDetail = ({ producto }) => {
           }
         </div>
         <div className="px-6 py-4 flex flex-col justify-around">
-          <div className="font-bold text-2xl mb-2">{producto.title}</div>
+          <div className="font-bold text-2xl mb-2">{product.title}</div>
           <p className="text-gray-700 text-base">
-            {producto.text}
+            {product.text}
           </p>
           <p className="text-gray-700 text-base">
-            {producto.description}
+            {product.description}
           </p>
           <div className="px-6 py-4">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{producto.hashtag1}</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{producto.hashtag2}</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#{producto.hashtag3}</span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{product.hashtag1}</span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{product.hashtag2}</span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#{product.hashtag3}</span>
           </div>
         </div>
       </div>

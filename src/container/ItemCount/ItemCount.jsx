@@ -3,7 +3,7 @@ import { useState } from "react"
 
 // --------------- Contador -------------//
 
-const ItemCoutn = ({ initial = 1, stock = 10, text = 'Mes', onAdd }) => {
+const ItemCount = ({ initial = 1, stock = 10, text = 'Mes', onAdd }) => {
   
   const [count, setCount] = useState(initial)
   const [cantText, setCantText] = useState(text)
@@ -40,13 +40,10 @@ const ItemCoutn = ({ initial = 1, stock = 10, text = 'Mes', onAdd }) => {
           <button className="border-2 pl-3 pr-3 border-gray-300 hover:text-white hover:bg-gray-800 hover:border-transparent  rounded-xl" onClick={handleSuma}> + </button>
         </div>
         <div>
-
           <center>
             <label>{count}{cantText}</label>
           </center>
-
         </div>
-
         <div>
           <button className="border-2 pl-3 pr-3 border-gray-300 hover:text-white hover:bg-gray-800 hover:border-transparent  rounded-xl bg-gray" onClick={handleRestar}> - </button>
         </div>
@@ -58,7 +55,7 @@ const ItemCoutn = ({ initial = 1, stock = 10, text = 'Mes', onAdd }) => {
   )
 }
 
-export default ItemCoutn
+export default ItemCount
 
 
 

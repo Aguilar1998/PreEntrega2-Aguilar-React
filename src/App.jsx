@@ -6,6 +6,7 @@ import ExampleSection from './container/ComponentsExampleSection/Section'
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer'
 import { CartContainer } from './container/ComponentsCart/CartContainer'
 import ItemListContainer from './container/ItemsListContainer/ItemListContainer'
+import { CartContextProvider } from './Context/CartContext'
 
 
 
@@ -21,19 +22,21 @@ const AppContext = createContext([])
 const App = () => {
     console.log(AppContext);
     return (
-        
-        <BrowserRouter className='container mx-auto'>
-            <NavBar />
-            <ExampleSection />
-            <Routes>
-                <Route path='/' element={<ItemListContainer />} />
-                <Route path='/category/:id' element={<ItemListContainer />} />
-                <Route path='/Item/:id' element={<ItemDetailContainer />} />
-                <Route path='*' element={<Navigate to='/' />} />
-                <Route path='/CartContainer' element={<CartContainer />} /> 
-            </Routes>
+        <CartContextProvider>
 
-        </BrowserRouter>
+            <BrowserRouter className='container mx-auto'>
+                <NavBar />
+                <ExampleSection />
+                <Routes>
+                    <Route path='/' element={<ItemListContainer />} />
+                    <Route path='/category/:id' element={<ItemListContainer />} />
+                    <Route path='/Item/:id' element={<ItemDetailContainer />} />
+                    <Route path='*' element={<Navigate to='/' />} />
+                    <Route path='/CartContainer' element={<CartContainer/>} />
+                </Routes>
+
+            </BrowserRouter>
+        </CartContextProvider>
     )
 }
 
