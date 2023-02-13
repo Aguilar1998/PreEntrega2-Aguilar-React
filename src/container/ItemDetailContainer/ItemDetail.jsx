@@ -13,9 +13,10 @@ export const ItemDetail = ({ product }) => {
   const onAdd = (cant) => {
     console.log(cant);
     setGoToCart(cant)
-  }
-  const handleClick = (cant) => {
     addToCart(cant)
+  }
+  const handleAddToCart = (count) => {
+    addToCart(product, count)
   }
 
   return (
@@ -31,13 +32,13 @@ export const ItemDetail = ({ product }) => {
                 <Link to='/CartContainer' onClick={() => setToggleOrders(!toggleOrders)} >
                   <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Ir al carrito</button>
                 </Link>
-                
+
                 <Link to='/'>
                   <button className="font-6 w-full inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Ver mas servicios</button>
                 </Link>
               </div>
               :
-              <ItemCount onAdd={onAdd} handleClick={handleClick} />
+              <ItemCount onAdd={onAdd} handleAddToCart={handleAddToCart} />
           }
         </div>
         <div className="px-6 py-4 flex flex-col justify-around">

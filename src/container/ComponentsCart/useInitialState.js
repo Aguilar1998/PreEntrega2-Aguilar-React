@@ -11,6 +11,7 @@ export const useInitialState = () => {
     const [state, setState] = useState(InitialState)
     const [loading, setLoading] = useState(true)
     const [product, setProduct] = useState([])
+    const [cart, setCart] = useState([])
 
 
     // funcion para agregar al carrito sin modificarlo.
@@ -40,5 +41,6 @@ export const useInitialState = () => {
         addToCart,
         loading,
         product,
+        cart
     }
 }

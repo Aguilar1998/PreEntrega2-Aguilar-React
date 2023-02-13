@@ -3,7 +3,7 @@ import { useState } from "react"
 
 // --------------- Contador -------------//
 
-const ItemCount = ({ initial = 1, stock = 10, text = 'Mes', onAdd, handleClick }) => {
+const ItemCount = ({ initial = 1, stock = 10, text = 'Mes', onAdd, handleAddToCart }) => {
   
   const [count, setCount] = useState(initial)
   const [cantText, setCantText] = useState(text)
@@ -30,7 +30,7 @@ const ItemCount = ({ initial = 1, stock = 10, text = 'Mes', onAdd, handleClick }
 
   const handleOnAdd = () => {
     onAdd(count)
-    handleClick()
+    handleAddToCart()
   }
 
   // ---------------Context nuevo-------------//
