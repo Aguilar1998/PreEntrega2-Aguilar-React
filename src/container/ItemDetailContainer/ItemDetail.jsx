@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
 import '../../assets/index.css'
+import AppContext from "../../Context/AppContext";
 
 
 export const ItemDetail = ({ product }) => {
   const [goToCart, setGoToCart] = useState()
-
+  const { addToCart } = useContext(AppContext)
+  const [toggleOrders, setToggleOrders] = useState(false)
 
   const onAdd = (cant) => {
     console.log(cant);
     setGoToCart(cant)
+  }
+  const handleClick = (cant) => {
+    addToCart(cant)
   }
 
   return (
@@ -22,15 +27,17 @@ export const ItemDetail = ({ product }) => {
           {
             goToCart ?
               <div className="w-full flex justify-evenly pt-3 border-t-2 border-gray-300 rotate-diagonal-1  ">
-                <Link to={'/CartContainer'}>
+
+                <Link to='/CartContainer' onClick={() => setToggleOrders(!toggleOrders)} >
                   <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Ir al carrito</button>
                 </Link>
-                <Link to={'/'}>
-                  <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Seguir comprando</button>
+                
+                <Link to='/'>
+                  <button className="font-6 w-full inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium hover:text-black text-white hover:bg-gray-300">Ver mas servicios</button>
                 </Link>
               </div>
               :
-              <ItemCount onAdd={onAdd} />
+              <ItemCount onAdd={onAdd} handleClick={handleClick} />
           }
         </div>
         <div className="px-6 py-4 flex flex-col justify-around">

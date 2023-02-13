@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { Await, useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
 import { gFetch } from "../../utils/gFetch";
 import ItemList from './ItemList'
+
+const API = 'http://api.escuelajs.co/api.v1/products';
 
 // --------------- Contenedor para listar las Card ------------- // 
 const ItemListContainer = () => {
@@ -25,6 +27,9 @@ const ItemListContainer = () => {
      * ----------------------------------------
      */
 
+
+
+
     useEffect(() => {
         gFetch()
             // --------------- condicional dentro del rendering ------------- // 
@@ -35,7 +40,7 @@ const ItemListContainer = () => {
                     setItems(res)
                 }
             })
-        // --------------- Detectar errores ------------- // 
+            // --------------- Detectar errores ------------- // 
             // .catch((errorMesage) => {setErrorMessage(`Error ${errorMesage}`)})
             // --------------- Al finalizar la recarga corta el loading ------------- // 
             .finally(() => setLoading(false))

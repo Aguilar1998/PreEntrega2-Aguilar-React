@@ -1,11 +1,23 @@
 import React from 'react'
+// import { useState } from 'react'
 import Item from './Item'
 
 
 
-// Llamado de item
+// Esta funcion "ItemList" se ocupa de renderizar las cartas de productos.
 
-export default function ItemList({items}) {
+export default function ItemList({ items }) {
+  
+
+
+  // de esta forma consumiria una api
+  // const [products, setproducts] = useState([])
+
+  // useEffect(async () => {
+  //     const response = await axios(API);
+  //     setProduct(response.data);
+  // },[])
+
   return (
     <div className='w-8/12 m-auto'>
       <div className=" flex mt-12 flex-wrap ">
