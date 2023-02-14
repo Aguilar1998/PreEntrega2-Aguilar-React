@@ -35,7 +35,7 @@ const ItemListContainer = () => {
     return (
         // --------------- Retornar el Dom ------------- // 
         // --------------- Ocultar/mostrar nodos del render ------------- // 
-        <div className=' h-screen'>
+        <div className='h-screen'>
             {loading
                 ?
                 <div className='flex flex-col h-3/6 justify-center'>
