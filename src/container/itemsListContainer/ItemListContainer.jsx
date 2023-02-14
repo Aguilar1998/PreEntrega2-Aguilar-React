@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Await, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
 import { gFetch } from "../../utils/gFetch";
 import ItemList from './ItemList'
 
-const API = 'http://api.escuelajs.co/api.v1/products';
 
 // --------------- Contenedor para listar las Card ------------- // 
 const ItemListContainer = () => {
@@ -12,7 +11,6 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const { id } = useParams()
     const [loading, setLoading] = useState(true)
-    // const [errorMesage, setErrorMessage] = useState(null)
 
     /* ----------------------------------------------
     /* Generar efecto de desmontaje // 
@@ -26,10 +24,6 @@ const ItemListContainer = () => {
      * Condicional para verificar si el id recibido es igual al selecionado
      * ----------------------------------------
      */
-
-
-
-
     useEffect(() => {
         gFetch()
             // --------------- condicional dentro del rendering ------------- // 
@@ -40,17 +34,8 @@ const ItemListContainer = () => {
                     setItems(res)
                 }
             })
-            // --------------- Detectar errores ------------- // 
-            // .catch((errorMesage) => {setErrorMessage(`Error ${errorMesage}`)})
-            // --------------- Al finalizar la recarga corta el loading ------------- // 
             .finally(() => setLoading(false))
     }, [id])
-
-
-    // if (errorMesage !== null) return <div>
-    //     <h2>Error</h2>
-    //     <p>{errorMesage}</p>
-    // </div>
 
 
     return (

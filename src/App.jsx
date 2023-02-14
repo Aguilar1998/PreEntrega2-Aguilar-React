@@ -1,7 +1,6 @@
 
-// import React, { createContext } from 'react'
+import React, { createContext } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-// import { useInitialState } from './container/ComponentsCart/useInitialState'
 import { CartContainer } from './container/ComponentsCart/CartContainer'
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer'
 import ItemListContainer from './container/ItemsListContainer/ItemListContainer'
@@ -9,24 +8,21 @@ import ExampleSection from './container/ComponentsExampleSection/Section'
 import NavBar from './container/ComponentsNavBar/NavBar'
 import Login from './page/Login'
 import { CartProvider } from './Context/CartContext'
-import { createContext } from 'react'
-// import AppContext from './Context/AppContext'
 
 
+
+
+// ---------------- Nuevo Context ---------------- //
 
 const  CartContext = createContext()
+
+// ---------------- Nuevo Context ---------------- //
 
 
 
 const App = () => {
     console.log(CartContext);
-    // ---------------- Nuevo Context ---------------- //
-
-    // const initialState = useInitialState()
-
-    // ---------------- Nuevo Context ---------------- //
     return (
-        // <AppContext.Provider value={initialState}>
             <CartProvider>
                 <BrowserRouter className='container mx-auto'>
                     <NavBar />
@@ -42,7 +38,6 @@ const App = () => {
 
                 </BrowserRouter>
             </CartProvider>
-        // </AppContext.Provider>
     )
 }
 

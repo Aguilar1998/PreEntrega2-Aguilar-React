@@ -1,24 +1,19 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
 import ItemCount from "../ItemCount/ItemCount"
 import '../../assets/index.css'
-import AppContext from "../../Context/AppContext";
 
 
 export const ItemDetail = ({ product }) => {
   const [goToCart, setGoToCart] = useState()
-  const { addToCart } = useContext(AppContext)
+  const { addToCart } = useContext(CartContext)
   const [toggleOrders, setToggleOrders] = useState(false)
 
-  const onAdd = (cant) => {
-    console.log(cant);
-    setGoToCart(cant)
-    addToCart(cant)
-  }
-  const handleAddToCart = (count) => {
+  const onAdd = (count) => {
+    setGoToCart(count)
     addToCart(product, count)
   }
-
   return (
     <div className='flex flex-row justify-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14   bg-yellow-50 '>
       <img src={product.image} alt="" className='w-2/5 padding-5 shadow-2xl rounded-xl	h-1/2	 p-0.5 ' />
@@ -38,7 +33,7 @@ export const ItemDetail = ({ product }) => {
                 </Link>
               </div>
               :
-              <ItemCount onAdd={onAdd} handleAddToCart={handleAddToCart} />
+              <ItemCount onAdd={onAdd} />
           }
         </div>
         <div className="px-6 py-4 flex flex-col justify-around">

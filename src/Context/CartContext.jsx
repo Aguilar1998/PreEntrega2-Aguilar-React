@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect} from 'react'
+import { useState, createContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { gFetch } from '../utils/gFetch'
 
@@ -13,16 +13,23 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (producto, count) => {
         if (isInCart(producto.id)) {
-            setCart(cart.map(product => {
-                return product.id === producto.id ? { ...product, count: producto.count = count + count } : producto
-            }))
+            setCart(
+                cart.map((product) => {
+                    return product.id === producto.id
+                        ? {
+                            ...product,
+                            count: count + product.count,
+                        }
+                        : product;
+                })
+            );
         } else {
-            setCart([...cart, { producto, count }])
+            setCart([...cart, { ...producto, count }]);
         }
-    }
+    };
 
     const clearCart = () => {
-        setCart()
+        setCart([])
     }
 
     const removeItem = (idToRemove) => {
@@ -34,14 +41,14 @@ export const CartProvider = ({ children }) => {
         return cart.reduce((prev, act) => prev + act.count * act.price, 0)
     }
 
-        const { id } = useParams()
+    const { id } = useParams()
 
     // --------------- rendering ------------- // 
     // --------------- Segundo rendering para cambiar de estado ------------- // 
     useEffect(() => {
         // --------------- condicional dentro del rendering ------------- // 
         gFetch(id)
-        .then(resp => setLoading(false))
+            .then(resp => setLoading(false))
     }, [id])
 
     return (
