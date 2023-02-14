@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { RingLoader } from 'react-spinners'
-import AppContext from '../../Context/AppContext'
+import { CartContext } from '../../Context/CartContext'
 import { Cart } from './Cart'
 
 export const CartContainer = () => {
-  const { loading, state } = useContext(AppContext)
+  const { cart, loading} = useContext(CartContext)
 
   return (
     <div>
-      {/* <h1>CartContainer</h1> */}
+      <h1>CartContainer</h1>
       {
         loading
           ?
@@ -17,8 +17,8 @@ export const CartContainer = () => {
           </div >
           :
           // Se mapean los productos 
-          state.cart.map(item => (
-            <Cart item={item} key={`OrderItem-${item.id}`} />
+          cart.map(product => (
+            <Cart product={product} key={`OrderItem-${product.id}`} />
           ))
       }
     </div>

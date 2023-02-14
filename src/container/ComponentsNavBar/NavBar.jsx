@@ -1,11 +1,11 @@
+import React, { useContext, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { Link, NavLink } from 'react-router-dom'
-import React, { useContext, useState } from 'react'
-import AppContext from '../../Context/AppContext'
 import ItemsNavBar from './ItemsNavBar'
 import '../../assets/index.css'
 import { Menu } from './Menu'
+import { CartContext } from '../../Context/CartContext'
 
 
 
@@ -16,7 +16,7 @@ import { Menu } from './Menu'
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
     const [toggleOrders, setToggleOrders] = useState(false)
-    const { state } = useContext(AppContext)
+    const { cart } = useContext(CartContext)
 
     const handleToggle = () => {
         setToggle(!toggle)
@@ -41,10 +41,10 @@ const NavBar = () => {
                             Gmail: aguilarmartin@gmail.com
                         </li>
                     </div>
-                    {toggle && <Menu />}
+                    {toggle && <Menu/>}
                     <div onClick={() => setToggleOrders(!toggleOrders)}>
                         <Link to='/CartContainer' className="inline-block text-sm px-4 py-2 leading-none border-2 rounde rounded-lg text-blue-500 hover:border-blue-500  mt-4 lg:mt-0">
-                            <div>{state.cart.length > 0 ? state.cart.length : null}</div>
+                            <div>1{cart.length > 0 ? cart.length : null}</div>
                             <FontAwesomeIcon icon={faCartShopping} />
                         </Link>
                     </div>
