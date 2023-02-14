@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { RingLoader } from 'react-spinners'
-import { doc, getDoc, getFirestore } from "../../utils/firebase/config"
+import { getFirestore, getDoc, doc, } from "firebase/firestore";
 // Import Components
 import { ItemDetail } from './ItemDetail'
 

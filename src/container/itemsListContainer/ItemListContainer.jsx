@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
-import { query, where, getDocs, collection, getFirestore } from "../../utils/firebase/config"
+import { getFirestore, collection, getDocs, query, where} from "firebase/firestore";
 import ItemList from './ItemList'
 
 
 // --------------- Contenedor para listar las Card ------------- // 
-const ItemListContainer = ({ nada }) => {
+const ItemListContainer = () => {
     // --------------- Estado ------------- // 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -42,7 +42,7 @@ const ItemListContainer = ({ nada }) => {
                     <RingLoader className='m-auto' color="#e5f15f" size={100} />
                 </div>
                 :
-                <ItemList items={productos} />
+                <ItemList productos={productos} />
             }
 
         </div>
