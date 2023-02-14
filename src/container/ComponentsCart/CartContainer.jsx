@@ -8,7 +8,7 @@ export const CartContainer = () => {
 
   return (
     <div>
-      <h1>CartContainer</h1>
+      {/* <h1>CartContainer</h1> */}
       {
         loading
           ?
