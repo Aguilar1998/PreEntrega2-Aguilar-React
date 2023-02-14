@@ -1,41 +1,35 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
-import { gFetch } from "../../utils/gFetch";
+import {  query, where, getDocs, collection, getFirestore } from "../../firebase/config"
 import ItemList from './ItemList'
 
 
 // --------------- Contenedor para listar las Card ------------- // 
-const ItemListContainer = () => {
+const ItemListContainer = ({ saludo }) => {
     // --------------- Estado ------------- // 
-    const [items, setItems] = useState([])
-    const { id } = useParams()
+    const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
+    const { categoryId } = useParams()
 
-    /* ----------------------------------------------
-    /* Generar efecto de desmontaje // 
-     * Luego del primer renderizado se produce un segundo rendering para cambiar de estado,
-     * A veces se produce sin intencion y causan bugs o perdida no intencionada de estados
-     * ---------------------------------------------- 
-    */
-
-    /**
-     * ----------------------------------------
-     * Condicional para verificar si el id recibido es igual al selecionado
-     * ----------------------------------------
-     */
+    /* A hook that is called when the component is mounted and when the categoryId changes. */
     useEffect(() => {
-        gFetch()
-            // --------------- condicional dentro del rendering ------------- // 
-            .then((res) => {
-                if (id) {
-                    setItems(res.filter((item) => item.categoria === id))
-                } else {
-                    setItems(res)
-                }
-            })
-            .finally(() => setLoading(false))
-    }, [id])
+        const firebaseQuerys = () => {
+            const db = getFirestore()
+            const queryCollection = collection(db, 'items')
+            const queryCollectionFilter = categoryId ? query(queryCollection, where('categoria', '==', categoryId)) : queryCollection
+                
+            getDocs(queryCollectionFilter)
+                .then(respuestaPromesa => {     
+                    setProductos(respuestaPromesa.docs.map(prod => ({ id: prod.id, ...prod.data() })))
+                })
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        }
+        firebaseQuerys()
+      
+    }, [categoryId])
+
 
 
     return (
@@ -48,11 +42,12 @@ const ItemListContainer = () => {
                     <RingLoader className='m-auto' color="#e5f15f" size={100} />
                 </div>
                 :
-                <ItemList items={items} />
+                <ItemList items={productos} />
             }
 
         </div>
     )
-}
+};
+
 
 export default ItemListContainer

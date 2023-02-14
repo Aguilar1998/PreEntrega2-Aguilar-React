@@ -1,45 +1,31 @@
 // Import React
-import { useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { RingLoader } from 'react-spinners'
-
+import { doc, getDoc, getFirestore } from "../../firebase/config"
 // Import Components
-import { gFetch } from '../../utils/gFetch'
 import { ItemDetail } from './ItemDetail'
 
 
 
 // --------------- Contenedor para detalle ------------- // 
 const ItemDetailContainer = () => {
-
+  
   // Estado
   const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
 
-  
-  
-  // --------------- useEfeect ------------- // 
-  
-  /* ----------------------------------------------
-  /* Generar efecto de desmontaje // 
-  * Luego del primer renderizado se produce un segundo rendering para cambiar de estado,
-  * A veces se produce sin intencion y causan bugs o perdida no intencionada de estados
-  * ---------------------------------------------- 
-  */
- 
- /**
-  * ----------------------------------------
-  * Condicional para modificar el estado
-  * ----------------------------------------
-  */
-  const { id } = useParams()
+  const { detaliId } = useParams()
 
-  useEffect(() => {
-    gFetch(id)
-      // --------------- UpDate ------------- // 
-      .then(resp => setProduct(resp))
-      .finally(() => setLoading(false))
-  }, [id])
+  useEffect((res) => {
+    const db = getFirestore()
+    const queryDoc = doc(db, 'items', detaliId)
+    getDoc(queryDoc)
+      .then(results => setProduct({ id: results.id, ...results.data() }))
+      .then((res)=> setLoading(false))
+      .catch(err => console.error(err))
+  }, [detaliId])
+
 
 
   return (

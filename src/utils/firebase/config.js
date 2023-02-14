@@ -31,8 +31,10 @@ export const db = getFirestore(app);
 
 export async function getItems() {
     // Necesito una referencia a la coleccion 
+    
     const producsCollectionRef = collection(db, "productos");
     // Pedirle a firebase los documentos de la coleccion
+
     const snapshot = await getDocs(producsCollectionRef)
     const docsData = snapshot.docs.map((doc) => {
         let dataOk = doc.data();
@@ -44,6 +46,7 @@ export async function getItems() {
 }
 
 
+// Obtener un solo articulo
 
 export async function getSingleItem(itemid) {
     // Necesito una referencia a la coleccion   
