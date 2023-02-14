@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { RingLoader } from 'react-spinners'
-import { doc, getDoc, getFirestore } from "../../firebase/config"
+import { doc, getDoc, getFirestore } from "../../utils/firebase/config"
 // Import Components
 import { ItemDetail } from './ItemDetail'
 
@@ -10,7 +10,7 @@ import { ItemDetail } from './ItemDetail'
 
 // --------------- Contenedor para detalle ------------- // 
 const ItemDetailContainer = () => {
-  
+
   // Estado
   const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     const queryDoc = doc(db, 'items', detaliId)
     getDoc(queryDoc)
       .then(results => setProduct({ id: results.id, ...results.data() }))
-      .then((res)=> setLoading(false))
+      .then((res) => setLoading(false))
       .catch(err => console.error(err))
   }, [detaliId])
 

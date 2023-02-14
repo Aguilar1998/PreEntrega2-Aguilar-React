@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
-import {  query, where, getDocs, collection, getFirestore } from "../../firebase/config"
+import { query, where, getDocs, collection, getFirestore } from "../../utils/firebase/config"
 import ItemList from './ItemList'
 
 
 // --------------- Contenedor para listar las Card ------------- // 
-const ItemListContainer = ({ saludo }) => {
+const ItemListContainer = ({ nada }) => {
     // --------------- Estado ------------- // 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -18,16 +18,16 @@ const ItemListContainer = ({ saludo }) => {
             const db = getFirestore()
             const queryCollection = collection(db, 'items')
             const queryCollectionFilter = categoryId ? query(queryCollection, where('categoria', '==', categoryId)) : queryCollection
-                
+
             getDocs(queryCollectionFilter)
-                .then(respuestaPromesa => {     
+                .then(respuestaPromesa => {
                     setProductos(respuestaPromesa.docs.map(prod => ({ id: prod.id, ...prod.data() })))
                 })
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
         }
         firebaseQuerys()
-      
+
     }, [categoryId])
 
 
