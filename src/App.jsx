@@ -29,8 +29,8 @@ const App = () => {
                     <ExampleSection />
                     <Routes>
                         <Route path='/' element={<ItemListContainer />} />
-                        <Route path='/category/:id' element={<ItemListContainer />} />
-                        <Route path='/Item/:id' element={<ItemDetailContainer />} />
+                        <Route path='/category/:categoryId' element={<ItemListContainer />} />
+                        <Route path='/Item/:detaliId' element={<ItemDetailContainer />} />
                         <Route path='*' element={<Navigate to='/' />} />
                         <Route path='/CartContainer' element={<CartContainer />} />
                         <Route path='/Login' element={<Login />} />

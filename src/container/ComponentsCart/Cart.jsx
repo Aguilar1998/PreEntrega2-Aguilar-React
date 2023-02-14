@@ -4,7 +4,9 @@ import { CartContext } from '../../Context/CartContext'
 
 
 export const Cart = ({ product, key }) => {
-    const { removeItem, getTotalPrice } = useContext(CartContext)
+    const { removeItem } = useContext(CartContext)
+
+    const totalOfAProduct = product.count * product.price
 
     return (
         <div key={`OrderItem-${key}`} className='flex flex-row justify-around aling items-center w-3/4 m-auto mt-32 border-gray-200 rounded-lg border-2 p-14   bg-yellow-50'>
@@ -23,7 +25,7 @@ export const Cart = ({ product, key }) => {
                 </button>
             </div>
 
-            <p>Total: ${getTotalPrice()}</p>
+            <p>Total: ${totalOfAProduct}</p>
         </div>
     )
 }
