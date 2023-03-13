@@ -53,4 +53,4 @@ To compile the dist files you need Node.js/npm, clone/download the repo then:
 
 ## License
 
-AdminLTE is an open source project created within the React.js course to be evaluated by the tutors and the teacher.
+Is an open source project created within the React.js course to be evaluated by the tutors and the teacher.
