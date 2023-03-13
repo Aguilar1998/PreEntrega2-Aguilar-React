@@ -1,11 +1,10 @@
 
 [![npm version](https://img.shields.io/npm/v/admin-lte/latest.svg)](https://www.npmjs.com/package/admin-lte)
-[![cdn version](https://data.jsdelivr.com/v1/package/npm/admin-lte/badge)](https://www.jsdelivr.com/package/npm/admin-lte)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/ColorlibHQ/AdminLTE)
 
 **Project React.js.
 
-## Looking for Premium Templates?
+## Are you looking to learn?
 
 This portfolio was made in the React.js course, you can access the following link <https://plataforma-login.coderhouse.com> for more information.
 
